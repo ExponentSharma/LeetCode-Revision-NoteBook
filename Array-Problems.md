@@ -69,7 +69,7 @@ class Solution {
 
 ---
 
-## 🧩 Problem 2 : Find Duplicate Elements in an Array
+## 🧩 Problem 2 : Find Duplicate Elements
 
 **Problem Statement:**
 Given an integer array `arr`, find all duplicate elements in the array and return them in a list.
