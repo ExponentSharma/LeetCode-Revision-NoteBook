@@ -60,7 +60,6 @@ class Solution {
 
 </details>
 
-
 ---
 
 ## 🧩 Problem 2 : Find Duplicate Elements in an Array
@@ -256,3 +255,83 @@ class Solution {
 - Keep **brute-force** for very small input or when learning/debugging.
 
 ---
+
+## 🧩 Problem 3: Check if Array is Sorted
+
+**Problem Statement:**  
+Given an integer array `arr`, determine if the array is sorted.
+
+- Can check for **ascending**, **descending**, or **either**.
+- Return `true` if sorted according to the requirement, else `false`.
+
+**Example:**
+
+```
+Input: arr = [1, 2, 3, 4, 5]
+Output: true (ascending)
+
+Input: arr = [5, 4, 4, 1]
+Output: true (descending)
+
+Input: arr = [1, 3, 2, 4]
+Output: false (unsorted)
+```
+
+**Hints:**
+
+- ✅ Compare each element with the next one.
+- ✅ For ascending: every `arr[i] <= arr[i+1]`.
+- ✅ For descending: every `arr[i] >= arr[i+1]`.
+- ✅ For general: check both ascending and descending patterns.
+
+<details>
+  <summary><b>Click to view Solution (Java)</b></summary>
+
+```java
+class Solution {
+
+    // Check ascending order
+    static boolean isAscending(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) return false;
+        }
+        return true;
+    }
+
+    // Check descending order
+    static boolean isDescending(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] < arr[i + 1]) return false;
+        }
+        return true;
+    }
+
+    // Check if sorted (either ascending or descending)
+    static boolean isSorted(int[] arr) {
+        return isAscending(arr) || isDescending(arr);
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int[] arr2 = {5, 4, 4, 1};
+        int[] arr3 = {1, 3, 2, 4};
+
+        System.out.println(isSorted(arr1)); // true
+        System.out.println(isSorted(arr2)); // true
+        System.out.println(isSorted(arr3)); // false
+    }
+}
+```
+
+</details>
+
+Time Complexity: O(n)
+Space Complexity: O(1) (no extra space used)
+
+🧠 Notes:
+
+```
+Works for arrays with repeated elements (<= and >=).
+For strictly increasing/decreasing, replace <= with < and >= with >.
+🚀 Very common in array validation, monotonic subarrays, and interview warm-up problems.
+```
