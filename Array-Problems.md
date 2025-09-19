@@ -1,64 +1,35 @@
-# LeetCode Revision Notebook
+# 🚀 Arrays Revision Notebook
 
-## Problem 1: Two Sum
 
-**Problem Statement:**
+## 🧩 Problem 1: Two Sum
+
+**Problem Statement:**  
 Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
 
-**Hints:**
+**Example:**  
+Input: `nums = [2,7,11,15], target = 9`  
+Output: `[0,1]`  
 
-- Use a HashMap for faster lookup
-- Think about the complement: `target - nums[i]`
-
-<details>
-  <summary><b>Click to view Solution (Python)</b></summary>
-
-```python
-# Solution hidden by default
-# Expand to view
-
-class Solution:
-    def twoSum(self, nums, target):
-        lookup = {}
-        for i, num in enumerate(nums):
-            if target - num in lookup:
-                return [lookup[target - num], i]
-            lookup[num] = i
-```
-
-</details>
-
----
-
-## Problem 2: Valid Parentheses
-
-**Problem Statement:**
-Given a string containing only the characters `'(', ')', '{', '}', '[' and ']'`, determine if the input string is valid.
-
-**Hints:**
-
-- Use a stack
-- Match closing brackets with the last open bracket
+**Hints:**  
+- ⚡ Use a HashMap for faster lookup  
+- 🧠 Think about the complement: `target - nums[i]`  
 
 <details>
-  <summary><b>Click to view Solution (Python)</b></summary>
+  <summary><b>💡 Click to view Solution (Java)</b></summary>
 
-```python
-# Solution hidden by default
-# Expand to view
+```java
+import java.util.HashMap;
 
-class Solution:
-    def isValid(self, s: str) -> bool:
-        stack = []
-        mapping = {")": "(", "}": "{", "]": "["}
-        for char in s:
-            if char in mapping:
-                top = stack.pop() if stack else "#"
-                if mapping[char] != top:
-                    return False
-            else:
-                stack.append(char)
-        return not stack
-```
-
-</details>
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[] { map.get(complement), i };
+            }
+            map.put(nums[i], i);
+        }
+        return new int[] {}; // no solution case
+    }
+}
