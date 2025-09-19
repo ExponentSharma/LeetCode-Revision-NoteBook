@@ -234,16 +234,6 @@ class Solution {
 </details>
 
 ---
-<<<<<<< HEAD
-
-## ✅ Quick recommendation
-
-- For most cases use **HashSet** approach: simple, fast (O(n)), and stable.
-- Use **sorting** if you need to avoid extra memory and can modify the array (or work on a copy).
-- Use **index-marking** only when values are guaranteed in `1..n` and you want O(1) extra space.
-- Keep **brute-force** for very small input or when learning/debugging.
-
----
 
 ## 🧩 Problem 3: Check if Array is Sorted
 
@@ -324,5 +314,3 @@ Works for arrays with repeated elements (<= and >=).
 For strictly increasing/decreasing, replace <= with < and >= with >.
 🚀 Very common in array validation, monotonic subarrays, and interview warm-up problems.
 ```
-=======
->>>>>>> 9d1903cfe3778563e2c1900fc7eb0784b667ef32
