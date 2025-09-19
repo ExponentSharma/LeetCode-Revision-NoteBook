@@ -5,9 +5,12 @@
 **Problem Statement:**  
 Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
 
-**Example:**  
-Input: `nums = [2,7,11,15], target = 9`  
-Output: `[0,1]`
+**Example:**
+
+```
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+```
 
 **Hints:**
 
@@ -20,7 +23,7 @@ Output: `[0,1]`
 - 💾 Space: **O(n)** (HashMap stores up to n elements)
 
 <details>
-  <summary><b>💡 Click to view Solution (Java)</b></summary>
+  <summary><b>💡1) Brute Force (Nested Loops)</b></summary>
 
 ```JAVA
 class Solution {
@@ -37,6 +40,10 @@ class Solution {
             }
 }
 ```
+
+</details>
+<details>
+  <summary><b>💡2) Hashmap approach (check if not present add)</b></summary>
 
 ```java
 import java.util.HashMap;
@@ -108,11 +115,6 @@ class Solution {
         }
         return duplicates;
     }
-
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 1, 3, 6, 6};
-        System.out.println("Duplicates: " + duplicates(arr));
-    }
 }
 ```
 
@@ -144,11 +146,6 @@ class Solution {
             }
         }
         return new ArrayList<>(dup);
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 1, 3, 6, 6};
-        System.out.println("Duplicates: " + duplicates(arr));
     }
 }
 ```
@@ -186,10 +183,6 @@ class Solution {
         return duplicates;
     }
 
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 1, 3, 6, 6};
-        System.out.println("Duplicates: " + duplicates(arr));
-    }
 }
 ```
 
@@ -235,17 +228,13 @@ class Solution {
 
         return duplicates;
     }
-
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 1, 3, 6, 6};
-        System.out.println("Duplicates: " + duplicates(arr));
-    }
 }
 ```
 
 </details>
 
 ---
+<<<<<<< HEAD
 
 ## ✅ Quick recommendation
 
@@ -335,3 +324,5 @@ Works for arrays with repeated elements (<= and >=).
 For strictly increasing/decreasing, replace <= with < and >= with >.
 🚀 Very common in array validation, monotonic subarrays, and interview warm-up problems.
 ```
+=======
+>>>>>>> 9d1903cfe3778563e2c1900fc7eb0784b667ef32
