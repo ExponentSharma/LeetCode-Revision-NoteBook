@@ -42,12 +42,10 @@ public static boolean binary_search(int arr[], int target) {
 </details>
 
 
-
 <details>
-  <summary> <h2> Selection Sort </h2> </summary>
+  <summary> <h2> Selection Sort </h2> | suppose first elm is minm and compare with all find new min and swap them</summary>
 
 ```java
-   // suppose first elm is minm and compare with all find new min and swap them
     public static void selectionSort(int arr[]) {
         for (int i = 0; i < arr.length - 1; i++) {
 
@@ -68,16 +66,11 @@ public static boolean binary_search(int arr[], int target) {
 ```
 </details>   
 
-
-
-
 <details>
-  <summary> <h2> Insertion Sort </h2> </summary>
+  <summary> <h2> Insertion Sort </h2> | key ki psn find krenge prvs array me [prvs | next ] </summary>
 
 ```java
- 
-    // key ki psn find krenge prvs array me [prvs | next ]
-    public static void insertion(int arr[]) {
+     public static void insertion(int arr[]) {
         for (int i = 1; i < arr.length; i++) {
             int key = arr[i];
             int j = i - 1;
@@ -92,15 +85,13 @@ public static boolean binary_search(int arr[], int target) {
     }
 ```    
 </details>
-
+ 
 
 <details>
-  <summary> <h2> Bubble Sort </h2> </summary>
+  <summary> <h2> Bubble Sort </h2> | Biggest or smallest nikal kr ayega last me </summary>
 
 ```java
- 
- // biggest or smallest nikal kr ayega last me
-    public static void bubble(int arr[]) {
+     public static void bubble(int arr[]) {
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -113,5 +104,33 @@ public static boolean binary_search(int arr[], int target) {
 
         System.out.println(Arrays.toString(arr));
     }
-    
+```
+</details> 
+ 
+<details>
+  <summary> <h2> Merge 2 Sorted Arrays </h2> | Compare and merge then add left elements without compare </summary>
+ 
+```java
+  public static void merge2Sorted(int a1[], int a2[]) {
+        int merge_array[] = new int[a1.length + a2.length];
+        int i = 0, j = 0, k = 0;
+        while (i < a1.length && j < a2.length) {
+            if (a1[i] < a2[j]) {
+                merge_array[k++] = a1[i++];
+            } else {
+                merge_array[k++] = a2[j++];
+            }
+        }
+
+        // left elem in first array
+        while (i < a1.length)
+            merge_array[k++] = a1[i++];
+
+        // left elem in second array
+        while (j < a2.length)
+            merge_array[k++] = a2[j++];
+
+        System.out.println("Merged Array : " + Arrays.toString(merge_array));
+    }
+```
 </details> 
